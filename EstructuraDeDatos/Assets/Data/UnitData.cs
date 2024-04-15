@@ -11,4 +11,5 @@ public class UnitData : ScriptableObject
     public int atkDamage;
     public int defDamage;
     public int health;
+    public int speed;
 }
