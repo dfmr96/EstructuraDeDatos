@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AddBuilding : MonoBehaviour
 {
-    [SerializeField] private BuildingController _buildingController;
-    [SerializeField] private Building _buildingToCreate;
+    [SerializeField] private ProvinceController provinceController;
+    [SerializeField] private BuildingData buildingDataToCreate;
 
     public void AddBuildingToProvince()
     {
-        Province pronvince = _buildingController.GetSelectedProvince();
+        Province pronvince = provinceController.GetSelectedProvince();
         
-        pronvince.AddBuildingToQueue(_buildingToCreate);
+        pronvince.AddBuildingToQueue(buildingDataToCreate);
     }
 }

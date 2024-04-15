@@ -3,9 +3,9 @@ using UnityEngine;
 namespace DefaultNamespace
 {
     [CreateAssetMenu(menuName = "Buildings/BuildingData", fileName = "New BuildingData")]
-    public class Building : ScriptableObject
+    public class BuildingData : ScriptableObject
     {
-        public string name;
+        public new string name;
         public int level;
         public int maxLevel;
         public int upgradeTime;

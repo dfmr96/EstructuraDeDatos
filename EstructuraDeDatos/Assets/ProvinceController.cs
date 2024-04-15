@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingController : MonoBehaviour
+public class ProvinceController : MonoBehaviour
 {
     [SerializeField] private Province selectedProvince;
 

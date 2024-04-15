@@ -3,30 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [System.Serializable]
 
 public class BuildingQueue
 {
-    public Queue<Building> buildings = new Queue<Building>();
-    public List<Building> buildingList = new List<Building>();
+    public Queue<BuildingData> buildings = new Queue<BuildingData>();
+    public List<BuildingData> buildingList = new List<BuildingData>();
 }
 public class Province : MonoBehaviour
 {
-    [SerializeField] private BuildingController buildingController;
+    [SerializeField] private ProvinceController provinceController;
     [SerializeField] private BuildingQueue buildingQueue;
-    [SerializeField] private List<Building> _buildings;
+    [SerializeField] private List<BuildingData> _buildings;
 
     private void OnMouseDown()
     {
-        buildingController.SetSelectedProvince(this);
+        provinceController.SetSelectedProvince(this);
     }
 
-    public void AddBuildingToQueue(Building building)
+    public void AddBuildingToQueue(BuildingData buildingData)
     {
-        buildingQueue.buildings.Enqueue(building);
-        buildingQueue.buildingList.Add(building);
+        buildingQueue.buildings.Enqueue(buildingData);
+        buildingQueue.buildingList.Add(buildingData);
         Debug.Log(buildingQueue.buildings.Count);
     }
 

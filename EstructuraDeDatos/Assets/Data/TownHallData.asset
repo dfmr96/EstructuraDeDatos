@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 084b7f39cd9645a89a5dae062edbfcc5, type: 3}
-  m_Name: WorkingOfficeData
+  m_Name: TownHallData
   m_EditorClassIdentifier: 
-  name: Working Office
+  name: Town Hall
   level: 0
   maxLevel: 5
-  upgradeTime: 8
+  upgradeTime: 15
