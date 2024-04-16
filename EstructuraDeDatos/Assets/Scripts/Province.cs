@@ -8,7 +8,7 @@ using UnityEngine.Serialization;
 
 [System.Serializable]
 
-public class BuildingQueue
+public class BuildingQueue 
 {
     public Queue<BuildingData> buildings = new Queue<BuildingData>();
     public List<BuildingData> buildingList = new List<BuildingData>();
