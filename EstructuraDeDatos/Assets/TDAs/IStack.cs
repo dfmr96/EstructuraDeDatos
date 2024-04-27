@@ -1,10 +1,10 @@
 namespace TDAs
 {
-    public interface IStack
+    public interface IStack<T>
     {
-        public void Push();
+        public void Push(T t);
         public void Pop();
-        public int Peek();
-        public bool isEmpty();
+        public T Peek();
+        public bool IsEmpty();
     }
 }

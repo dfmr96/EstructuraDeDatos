@@ -1,12 +1,12 @@
 namespace TDAs
 {
     [System.Serializable]
-    public class ListNode
+    public class ListNode<T>
     {
-        public int value;
-        public ListNode next;
+        public T value;
+        public ListNode<T> next;
 
-        public ListNode(int value)
+        public ListNode(T value)
         {
             this.value = value;
         }

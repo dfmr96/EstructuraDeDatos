@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
+using TDAs;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -10,7 +11,7 @@ using UnityEngine.Serialization;
 
 public class BuildingQueue 
 {
-    public Queue<BuildingData> buildings = new Queue<BuildingData>();
+    public QueueTDA<BuildingData> buildings = new QueueTDA<BuildingData>();
     public List<BuildingData> buildingList = new List<BuildingData>();
 }
 public class Province : MonoBehaviour
@@ -34,9 +35,10 @@ public class Province : MonoBehaviour
     [ContextMenu("CreateBuilding")]
     public void CreateBuilding()
     {
-        Debug.Log($"{buildingQueue.buildings.Peek().name} creado");
-        _buildings.Add(buildingQueue.buildings.Peek());
-        buildingQueue.buildings.Dequeue();
+        BuildingData lastBuildingData = buildingQueue.buildings.Peek();
+        Debug.Log($"{lastBuildingData.name} creado");
+        _buildings.Add(lastBuildingData);
+        buildingQueue.buildings.Dequeue(lastBuildingData);
         buildingQueue.buildingList.RemoveAt(0);
     }
 }

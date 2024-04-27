@@ -2,24 +2,23 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace TDAs
 {
-    public class NestedStack : MonoBehaviour, IStack
+    public class NestedStack<T> : IStack<T>
     {
-        public ListNode head;
-        public List<ListNode> list;
+        public ListNode<T> head;
+        public List<ListNode<T>> debugList;
 
         [ContextMenu("Push")]
-        public void Push()
+        public void Push(T t)
         {
-            int i = UnityEngine.Random.Range(0, 5);
-
-            ListNode newNode = new ListNode(i);
-            if (!isEmpty())
+            ListNode<T> newNode = new ListNode<T>(t);
+            if (!IsEmpty())
             {
 
-                ListNode auxNode = GetLastNode();
+                ListNode<T> auxNode = GetLastNode();
 
                 auxNode.next = newNode;
             }
@@ -28,13 +27,13 @@ namespace TDAs
                 head = newNode;
             }
             
-            list.Add(newNode);
+            debugList.Add(newNode);
             PrintStack();
         }
 
-        private ListNode IterateFromHead()
+        private ListNode<T> IterateFromHead()
         {
-            ListNode auxNode = head;
+            ListNode<T> auxNode = head;
             while (auxNode.next != null)
             {
                 auxNode = auxNode.next;
@@ -43,7 +42,7 @@ namespace TDAs
             return auxNode;
         }
 
-        private ListNode GetLastNode()
+        private ListNode<T> GetLastNode()
         {
             return IterateFromHead();
         }
@@ -51,10 +50,10 @@ namespace TDAs
         [ContextMenu("Pop")]
         public void Pop()
         {
-            if (isEmpty()) return;
+            if (IsEmpty()) return;
             
-            ListNode auxNode = head;
-            ListNode previusNode = null;
+            ListNode<T> auxNode = head;
+            ListNode<T> previusNode = null;
             while (auxNode.next != null)
             {
                 previusNode = auxNode;
@@ -62,27 +61,27 @@ namespace TDAs
             }
 
             if (previusNode != null) previusNode.next = null;
-            list.RemoveAt(list.Count - 1);
+            debugList.RemoveAt(debugList.Count - 1);
             PrintStack();
         }
 
         [ContextMenu("Peek")]
-        public int Peek()
+        public T Peek()
         {
-            ListNode auxNode = IterateFromHead();
+            ListNode<T> auxNode = IterateFromHead();
 
             Debug.Log($"{auxNode.value}");
             return auxNode.value;
         }
 
-        public bool isEmpty()
+        public bool IsEmpty()
         {
             return head == null;
         }
 
         public void PrintStack()
         {
-            ListNode auxNode = head;
+            ListNode<T> auxNode = head;
 
             while (auxNode.next != null)
             {

@@ -1,0 +1,820 @@
+fileFormatVersion: 2
+guid: ca3d926f3748f2d46948f0d2f4a1544a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 1
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_4
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 900
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ffd3827deaf0e45ad0f79a3cbcdf89
+      internalID: 1888246897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_5
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 883
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbc243d98c064f48b01d79678bb1e03
+      internalID: -747009967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 883
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad65c29a07be4146b3cfbafcf8d0d5b
+      internalID: 198350365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_7
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 883
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0ed9be594da5c429e4046ec18b85ad
+      internalID: 164627840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_8
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 866
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b780a0705696c645946c574e18d330c
+      internalID: -1520916730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_9
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 866
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3eaa7bf3dde0a1448e11775af3c677b
+      internalID: -793797342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_11
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 866
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ad958dbaf002a9418b716e1e570e893
+      internalID: 1895924895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_12
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 849
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a5c5faf249386042b2cee2e281cf5c3
+      internalID: -908257986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_13
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 849
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee6daac8be031314699e55a05bd0b40e
+      internalID: 1520674486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_14
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 849
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675d99828c8701145865813db786aea1
+      internalID: 1203258116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 900
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180e0eeb4f6a9cb408a414ac732ef66a
+      internalID: -1850942673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 900
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38459b1a6166c234caa9570f5821cc2c
+      internalID: -624002279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_2
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 900
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c1d71f624f62148b8c6c3f027aedb0
+      internalID: -1815527688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_3
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 900
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a21d9b574ca4ae43932c33d83033769
+      internalID: 845767563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 798
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09665a60d386c94bab2bdc278d4c6fb
+      internalID: 259460944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_15
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 815
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1385dfb62f4f184d8b1fa1ddc1a8c1f
+      internalID: -546499012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 815
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3be0b53bd749bf4ca3114ab4709a352
+      internalID: -2133180569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_17
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 815
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 383782c2056fa8c4ebef66bce858ae39
+      internalID: -551982420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 798
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01daadd275c3d534e8f8565909605ce5
+      internalID: -1219980101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_19
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 798
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df38e2b9d850fc47ab062e81354b39e
+      internalID: -128312887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_20
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 798
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eaddcfcc20660f478e22474bcd7bd65
+      internalID: -862595235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_21
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 781
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3c3e796e38f3e4b93f371da4d33ee7
+      internalID: 164792921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_22
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 781
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcb5bcfd3b9cd240aa83eab41957f2e
+      internalID: 1171019337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_23
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 781
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0589307555fee99459701c9521f2777d
+      internalID: 1328340432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_24
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 798
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63cd99af9912414b99ab9328e6f5ba9
+      internalID: 355475894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 798
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03b9a8d1d3a21c498606420db317fb9
+      internalID: 673855343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_26
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 815
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3e1a357261912149b7acd04a217abcf
+      internalID: -1474546329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_27
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 815
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170820d498f76914c9f1ddfd0c6772ff
+      internalID: -1367344276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_28
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 849
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f252969531c91e2449c036865da71870
+      internalID: 192681726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Dual Strike - Tileset Normal_29
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 865
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6334ce021588d42a899845a9403718
+      internalID: -700424175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_0: -1850942673
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_1: -624002279
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_10: 259460944
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_11: 1895924895
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_12: -908257986
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_13: 1520674486
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_14: 1203258116
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_15: -546499012
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_16: -2133180569
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_17: -551982420
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_18: -1219980101
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_19: -128312887
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_2: -1815527688
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_20: -862595235
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_21: 164792921
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_22: 1171019337
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_23: 1328340432
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_24: 355475894
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_25: 673855343
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_26: -1474546329
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_27: -1367344276
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_28: 192681726
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_29: -700424175
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_3: 845767563
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_30: 2068406647
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_31: 461725162
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_32: -626988841
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_33: -645933332
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_34: 935292508
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_35: -784367260
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_36: 1213545062
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_37: -1908688085
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_38: 1870764929
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_39: -1873461094
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_4: 1888246897
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_40: 624254904
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_41: 90936877
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_42: -2094414886
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_43: 359960051
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_44: 1645819005
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_45: -1524110858
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_46: -532693488
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_47: 834303666
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_48: 407336874
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_49: 1860410890
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_5: -747009967
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_50: 351643836
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_51: -865592550
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_52: 1273870547
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_53: 2077312473
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_54: -2092670647
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_55: 1169964965
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_56: 1666020350
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_57: 2026175967
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_58: 446690270
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_59: -22433760
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_6: 198350365
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_60: -864025102
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_61: 572597986
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_62: -658143617
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_63: -1835319882
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_64: 1486565663
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_65: -972344365
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_66: 1848879849
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_7: 164627840
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_8: -1520916730
+      DS DSi - Advance Wars Dual Strike - Tileset Normal_9: -793797342
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
