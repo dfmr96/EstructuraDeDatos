@@ -11,6 +11,13 @@ namespace TDAs.Graphs
         private GraphNode<T> head;
         private int vertexCount;
         
+        private List<GraphNode<T>> nodes = new List<GraphNode<T>>();
+
+        public IEnumerable<GraphNode<T>> Nodes
+        {
+            get { return nodes; }
+        }
+        
         public void Init(int size)
         {
             head = null;
@@ -28,6 +35,7 @@ namespace TDAs.Graphs
             newNode.nextNode = head;
             head = newNode;
             vertexCount++;
+            nodes.Add(newNode);
         }
         public void RemoveNode(T value)
         {

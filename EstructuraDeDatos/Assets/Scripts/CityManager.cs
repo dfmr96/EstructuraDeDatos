@@ -11,6 +11,8 @@ namespace DefaultNamespace
 {
     public class CityManager : MonoBehaviour
     {
+        public static CityManager instance; // Singleton para acceder desde otros scripts
+        
         public GameObject cityPrefab;
         public GameObject linePrefab;
         public GameObject distanceLabelPrefab;
@@ -18,7 +20,19 @@ namespace DefaultNamespace
         public MovableUnit unit;
         public LineRenderer fastestPathRenderer;
         public TMP_Text timeRemainingText;
-
+        public MovableUnit selectedUnit; // Unidad seleccionada actualmente
+        
+        private void Awake()
+        {
+            if (instance == null)
+                instance = this;
+        }
+        
+        public void UpdateSelectedUnit(MovableUnit unit)
+        {
+            selectedUnit = unit;
+        }        
+        
         private void Start()
         {
             cityGraph = new DynamicGraph<City>();
@@ -42,7 +56,7 @@ namespace DefaultNamespace
             AddEdge(cityE, cityC, 5);
             AddEdge(cityB, cityE, 7);
             
-            MoveUnitBetweenCities(cityA, cityE);
+            //MoveUnitBetweenCities(cityA, cityE);
         }
         
         private City CreateCity(string cityName, Vector3 position)
@@ -56,6 +70,7 @@ namespace DefaultNamespace
         private void AddEdge(City fromCity, City toCity, int weight)
         {
             cityGraph.AddEdge(fromCity, toCity, weight);
+            cityGraph.AddEdge(toCity, fromCity, weight);
             DrawConnection(fromCity, toCity, weight);
         }
         
@@ -74,14 +89,43 @@ namespace DefaultNamespace
             textMesh.text = weight.ToString();
         }
 
-        public void MoveUnitBetweenCities(City fromCity, City toCity)
+        public void MoveUnitBetweenCities(MovableUnit unit, City targetCity)
         {
-            List<GraphNode<City>> path = cityGraph.FindShortestPath(fromCity, toCity);
-            if (path != null)
+            City currentCity = GetCurrentCity(unit);  // Obtener la ciudad actual de la unidad
+            if (currentCity != null)
             {
-                DrawFastestPath(path);
-                StartCoroutine(MoveUnitAlongPath(path));
+                List<GraphNode<City>> path = cityGraph.FindShortestPath(currentCity, targetCity);
+                if (path != null)
+                {
+                    unit.MoveAlongPath(path); // Iniciar el movimiento de la unidad a lo largo del camino
+                }
+                else
+                {
+                    Debug.Log("No se encontró camino válido.");
+                }
             }
+            else
+            {
+                Debug.Log("No se pudo determinar la ciudad actual de la unidad.");
+            }
+        }
+        private City GetCurrentCity(MovableUnit unit)
+        {
+            City closestCity = null;
+            float minDistance = float.MaxValue;
+
+            foreach (GraphNode<City> node in cityGraph.Nodes) // Asumiendo que tienes una lista o algún método para acceder a los nodos
+            {
+                City city = node.value;
+                float distance = Vector3.Distance(unit.transform.position, city.transform.position);
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestCity = city;
+                }
+            }
+
+            return closestCity;
         }
         
         private void DrawFastestPath(List<GraphNode<City>> path)
@@ -160,5 +204,14 @@ namespace DefaultNamespace
             float travelTime = distance / travelSpeed;
             return travelTime;
         }
+        
+        private City GetCurrentCity(Unit unit)
+        {
+            // Implementar lógica para determinar la ciudad actual de la unidad
+            // Puede ser basado en la posición o alguna lógica específica de tu juego
+            return null; // Debes implementar esta función según la lógica de tu juego
+        }
+        
+        
     }
 }
