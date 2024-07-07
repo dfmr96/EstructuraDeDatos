@@ -13,10 +13,12 @@ namespace DefaultNamespace
         private Coroutine moveCoroutine; // Referencia a la corrutina de movimiento actual
         public bool isSelected = false; // Estado de selección de la unidad
         [SerializeField] private TMP_Text timeRemainingText;
+        public bool isEnemy; // Define si la unidad es enemiga
 
 
         private void Start()
         {
+            
             var clickable = GetComponent<ClickableObject>();
             if (clickable != null)
             {
@@ -108,5 +110,16 @@ namespace DefaultNamespace
                 timeRemainingText.text = $"Tiempo Restante: {timeRemaining:F1} segundos";
             }
         }
+        
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            MovableUnit otherUnit = collision.gameObject.GetComponent<MovableUnit>();
+            if (otherUnit != null && otherUnit.isEnemy)
+            {
+                Debug.Log("Enemy unit destroyed!");
+                Destroy(otherUnit.gameObject); // Destruye la unidad enemiga
+            }
+        }
+        
     }
 }
