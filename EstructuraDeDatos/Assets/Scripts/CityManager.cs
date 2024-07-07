@@ -12,7 +12,7 @@ namespace DefaultNamespace
     public class CityManager : MonoBehaviour
     {
         public static CityManager instance; // Singleton para acceder desde otros scripts
-        
+        public List<Transform> cityPositions;
         public GameObject cityPrefab;
         public GameObject linePrefab;
         public GameObject distanceLabelPrefab;
@@ -37,11 +37,11 @@ namespace DefaultNamespace
         {
             cityGraph = new DynamicGraph<City>();
 
-            City cityA = CreateCity("City A", new Vector3(0, 0, 0));
-            City cityB = CreateCity("City B", new Vector3(5, 0, 0));
-            City cityC = CreateCity("City C", new Vector3(10, 0, 0));
-            City cityD = CreateCity("City D", new Vector3(5, 5, 0));
-            City cityE = CreateCity("City E", new Vector3(10, 5, 0));
+            City cityA = CreateCity("City A", cityPositions[0].position);
+            City cityB = CreateCity("City B", cityPositions[1].position);
+            City cityC = CreateCity("City C", cityPositions[2].position);
+            City cityD = CreateCity("City D", cityPositions[3].position);
+            City cityE = CreateCity("City E", cityPositions[4].position);
             
             cityGraph.AddNode(cityA);
             cityGraph.AddNode(cityB);
@@ -49,14 +49,20 @@ namespace DefaultNamespace
             cityGraph.AddNode(cityD);
             cityGraph.AddNode(cityE);
             
-            AddEdge(cityA, cityB, 5);
-            AddEdge(cityB, cityC, 5);
-            AddEdge(cityA, cityD, 10);
-            AddEdge(cityD, cityE, 5);
-            AddEdge(cityE, cityC, 5);
-            AddEdge(cityB, cityE, 7);
+            AddEdge(cityA, cityB, GetCityDistance(cityA,cityB));
+            AddEdge(cityA, cityC, GetCityDistance(cityA,cityC));
+            AddEdge(cityA, cityD, GetCityDistance(cityA,cityD));
+            AddEdge(cityB, cityE, GetCityDistance(cityB,cityE));
+            AddEdge(cityC, cityE, GetCityDistance(cityC,cityE));
+            AddEdge(cityD, cityE, GetCityDistance(cityD,cityE));
             
             //MoveUnitBetweenCities(cityA, cityE);
+        }
+
+        public int GetCityDistance(City cityA, City cityB)
+        {
+            float distance = (cityB.transform.position - cityA.transform.position).magnitude;
+            return (int)distance;
         }
         
         private City CreateCity(string cityName, Vector3 position)
@@ -91,22 +97,24 @@ namespace DefaultNamespace
 
         public void MoveUnitBetweenCities(MovableUnit unit, City targetCity)
         {
-            City currentCity = GetCurrentCity(unit);  // Obtener la ciudad actual de la unidad
+            City currentCity = GetCurrentCity(unit);
             if (currentCity != null)
             {
                 List<GraphNode<City>> path = cityGraph.FindShortestPath(currentCity, targetCity);
-                if (path != null)
+                if (path != null && path.Count > 0)
                 {
-                    unit.MoveAlongPath(path); // Iniciar el movimiento de la unidad a lo largo del camino
+                    Debug.Log("Path found, moving unit.");
+                    unit.StopCurrentMovement();  // Asegúrate de detener el movimiento actual
+                    unit.MoveUnitAlongPath(path);
                 }
                 else
                 {
-                    Debug.Log("No se encontró camino válido.");
+                    Debug.Log("No valid path found.");
                 }
             }
             else
             {
-                Debug.Log("No se pudo determinar la ciudad actual de la unidad.");
+                Debug.Log("Could not determine the current city of the unit.");
             }
         }
         private City GetCurrentCity(MovableUnit unit)
@@ -212,6 +220,18 @@ namespace DefaultNamespace
             return null; // Debes implementar esta función según la lógica de tu juego
         }
         
+        public void ChangeUnitDestination(City newDestination)
+        {
+            if (selectedUnit != null && newDestination != null)
+            {
+                Debug.Log($"Changing destination for {selectedUnit.name} to {newDestination.name}");
+                MoveUnitBetweenCities(selectedUnit, newDestination);
+            }
+            else
+            {
+                Debug.Log("Either no unit is selected or the new destination is null.");
+            }
+        }
         
     }
 }

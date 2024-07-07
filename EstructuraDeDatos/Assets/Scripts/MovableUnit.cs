@@ -14,21 +14,40 @@ namespace DefaultNamespace
         public bool isSelected = false; // Estado de selección de la unidad
         [SerializeField] private TMP_Text timeRemainingText;
         public bool isEnemy; // Define si la unidad es enemiga
-
-
+        public Vector3 destination;
+        private Coroutine currentMoveCoroutine;
+        public Color selectedColor = Color.red; // Color cuando la unidad está seleccionada
+        public Color defaultColor = Color.white;
+        private SpriteRenderer spriteRenderer;
+        
         private void Start()
         {
-            
+            spriteRenderer = GetComponent<SpriteRenderer>();
             var clickable = GetComponent<ClickableObject>();
             if (clickable != null)
             {
                 clickable.OnLeftClick.AddListener(ToggleSelection);
             }
         }
+        void OnMouseDown()
+        {
+            UnitManager.instance.SelectUnit(this);
+        }
+        
+        public void Select()
+        {
+            spriteRenderer.color = selectedColor;  // Cambia el color a seleccionado
+        }
+
+        public void Deselect()
+        {
+            spriteRenderer.color = defaultColor;  // Vuelve al color original
+        }
         
         private void ToggleSelection()
         {
             isSelected = !isSelected;
+            //spriteRenderer.color = isSelected ? selectedColor : defaultColor;
             Debug.Log($"Unidad {(isSelected ? "seleccionada" : "deseleccionada")}");
             CityManager.instance.UpdateSelectedUnit(isSelected ? this : null);
         }
@@ -53,13 +72,33 @@ namespace DefaultNamespace
             OnDestinationReached();
         }
         
-        public void MoveAlongPath(List<GraphNode<City>> path)
+        public void MoveUnitAlongPath(List<GraphNode<City>> path)
         {
-            if (moveCoroutine != null)
+            StartCoroutine(MoveAlongPath(path));
+        }
+        
+        public IEnumerator  MoveAlongPath(List<GraphNode<City>> path)
+        {
+            foreach (var node in path)
             {
-                StopCoroutine(moveCoroutine); // Detener la corrutina anterior si existe
+                Vector3 startPosition = transform.position;
+                Vector3 endPosition = node.value.transform.position;
+                float journeyLength = Vector3.Distance(startPosition, endPosition);
+                float journeyTravelled = 0f;
+
+                while (journeyTravelled < journeyLength)
+                {
+                    journeyTravelled += speed * Time.deltaTime;
+                    float fractionOfJourney = journeyTravelled / journeyLength;
+                    transform.position = Vector3.Lerp(startPosition, endPosition, fractionOfJourney);
+
+                    // Actualiza el texto del tiempo restante
+                    float remainingTime = (journeyLength - journeyTravelled) / speed;
+                    UpdateTimeRemainingText(remainingTime);
+
+                    yield return null;
+                }
             }
-            moveCoroutine = StartCoroutine(MoveCoroutine(path));
         }
 
         private void OnDestinationReached()
@@ -111,6 +150,11 @@ namespace DefaultNamespace
             }
         }
         
+        public void StopCurrentMovement()
+        {
+            StopAllCoroutines();  // Detiene todas las corutinas, asegurando que no haya movimientos pendientes
+        }
+        
         void OnCollisionEnter2D(Collision2D collision)
         {
             MovableUnit otherUnit = collision.gameObject.GetComponent<MovableUnit>();
@@ -120,6 +164,31 @@ namespace DefaultNamespace
                 Destroy(otherUnit.gameObject); // Destruye la unidad enemiga
             }
         }
+        
+        public void MoveTo(Vector3 newDestination)
+        {
+            destination = newDestination;
+            if (currentMoveCoroutine != null)
+            {
+                StopCoroutine(currentMoveCoroutine);
+            }
+            currentMoveCoroutine = StartCoroutine(MoveTowardsDestination());
+        }
+        
+        private IEnumerator MoveTowardsDestination()
+        {
+            while (Vector3.Distance(transform.position, destination) > 0.1f)
+            {
+                transform.position = Vector3.Lerp(transform.position, destination, speed * Time.deltaTime);
+                yield return null;
+            }
+        }
+        
+        public void ChangeDestination(Vector3 newDestination)
+        {
+            MoveTo(newDestination);
+        }
+        
         
     }
 }
