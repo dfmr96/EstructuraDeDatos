@@ -9,5 +9,6 @@ namespace DefaultNamespace
         public int level;
         public int maxLevel;
         public int upgradeTime;
+        public float cost;
     }
 }

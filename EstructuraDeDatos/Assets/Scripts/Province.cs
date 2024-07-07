@@ -38,7 +38,7 @@ public class Province : MonoBehaviour
         BuildingData lastBuildingData = buildingQueue.buildings.Peek();
         Debug.Log($"{lastBuildingData.name} creado");
         _buildings.Add(lastBuildingData);
-        buildingQueue.buildings.Dequeue(lastBuildingData);
+        buildingQueue.buildings.Dequeue();
         buildingQueue.buildingList.RemoveAt(0);
     }
 }
