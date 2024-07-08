@@ -15,9 +15,10 @@ MonoBehaviour:
   name: EnemyArtillery
   description: Are low tier indirect attack units.
   sprite: {fileID: -269134933, guid: 326c0f373b903274b8bad2e40b8295ae, type: 3}
-  atkDamage: 10
+  atkDamage: 3
   defDamage: 1
-  health: 15
+  health: 3
   speed: 0.25
   range: 3.5
   atkRate: 3
+  cost: 0

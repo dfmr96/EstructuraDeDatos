@@ -15,9 +15,10 @@ MonoBehaviour:
   name: EnemyInfantry
   description: Cheap anti-infantry infantry
   sprite: {fileID: -1505030451, guid: 326c0f373b903274b8bad2e40b8295ae, type: 3}
-  atkDamage: 5
+  atkDamage: 1
   defDamage: 5
-  health: 10
+  health: 1
   speed: 0.75
   range: 0.5
   atkRate: 1
+  cost: 0

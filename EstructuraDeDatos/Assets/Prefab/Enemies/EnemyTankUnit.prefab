@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 1772996422, guid: 326c0f373b903274b8bad2e40b8295ae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,13 +101,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  state: 1
-  unit: {fileID: 11400000, guid: 9280ecee8bf86a34593a62a7a390cbe3, type: 2}
+  unitData: {fileID: 11400000, guid: 9280ecee8bf86a34593a62a7a390cbe3, type: 2}
   currentHealth: 0
+  damage: 0
   speed: 0
-  col: {fileID: 8709266859990995109}
-  target: {fileID: 0}
-  _unitDetector: {fileID: 8709266859990995108}
+  explosionPrefab: {fileID: 5808208547970989466, guid: 24f6db8be38abeb43874a9a447900027, type: 3}
 --- !u!61 &8709266859640824521
 BoxCollider2D:
   m_ObjectHideFlags: 0

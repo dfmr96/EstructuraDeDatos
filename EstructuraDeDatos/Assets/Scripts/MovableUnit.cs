@@ -5,6 +5,7 @@ using Data;
 using TDAs;
 using TDAs.Graphs;
 using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -12,7 +13,7 @@ namespace DefaultNamespace
     public class MovableUnit : MonoBehaviour
     {
         public UnitData unitData;
-        public int currentHealth;
+        public float currentHealth;
         public int damage;
         
         public float speed = 1f; // Speed of the unit in units per second
@@ -26,18 +27,36 @@ namespace DefaultNamespace
         public Color defaultColor = Color.white;
         private SpriteRenderer spriteRenderer;
 
+        public GameObject explosionPrefab;
+
+        public GameObject unitUIPrefab;
+
+        public UnitScroll UnitScrollInfo;
+
         private void Awake()
         {
             //InitUnit();
         }
 
-        public void InitUnit(UnitData unitData)
+        public void InitUnit(UnitData unitData, GameObject unitListContent)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = unitData.sprite;
             currentHealth = unitData.health;
             damage = unitData.atkDamage;
             speed = unitData.speed;
+
+            GenerateUnitListItem(unitData, unitListContent);
+        }
+
+        private void GenerateUnitListItem(UnitData unitData, GameObject unitListContent)
+        {
+            GameObject unitUI = Instantiate(unitUIPrefab, unitListContent.transform);
+            if (unitUI.TryGetComponent(out UnitScroll unitScroll))
+            {
+                UnitScrollInfo = unitScroll;
+                unitScroll.UpdateInfo(unitData.bigSprite, unitData.health, (int)currentHealth, unitData.name);
+            }
         }
 
         private void Start()
@@ -189,11 +208,23 @@ namespace DefaultNamespace
         
         void OnCollisionEnter2D(Collision2D collision)
         {
-            MovableUnit otherUnit = collision.gameObject.GetComponent<MovableUnit>();
-            if (otherUnit != null && otherUnit.isEnemy)
+            if (collision.gameObject.TryGetComponent(out EnemyUnit enemy))
             {
-                Debug.Log("Enemy unit destroyed!");
-                Destroy(otherUnit.gameObject); // Destruye la unidad enemiga
+                enemy.TakeDamage(damage);
+                TakeDamage(enemy.damage);
+            }
+        }
+
+        public void TakeDamage(float damage)
+        {
+            currentHealth -= damage;
+            UnitScrollInfo.UpdateHealth( (int)currentHealth);
+
+            if (currentHealth <= 0)
+            {
+                Instantiate(explosionPrefab, transform.position, quaternion.identity);
+                Destroy(UnitScrollInfo.gameObject);
+                Destroy(gameObject);
             }
         }
         

@@ -188,6 +188,69 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: 11787_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1373
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397d0da00497f21459464c86e578acb6
+      internalID: -861655912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 11787_1
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 1031
+        width: 39
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5f2801eb580eb408b7539b08eaf55a
+      internalID: 1226112993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 11787_2
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 723
+        width: 48
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c5ce1bc53efa542a0ae8093bf2e1b2
+      internalID: -1428585044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -199,6 +262,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      11787_0: -861655912
+      11787_1: 1226112993
+      11787_2: -1428585044
       APC_1: -2102568491
       Artillery_1: 62321192
       Infantry_1: -259426354

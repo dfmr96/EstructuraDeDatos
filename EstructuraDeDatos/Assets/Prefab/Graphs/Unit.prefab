@@ -236,6 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8704d737e0fc4a1ab13c9d3107667f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitData: {fileID: 0}
+  currentHealth: 0
+  damage: 0
   speed: 0
   isSelected: 0
   timeRemainingText: {fileID: 0}
@@ -243,6 +246,8 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   selectedColor: {r: 0, g: 1, b: 0.029511452, a: 1}
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  explosionPrefab: {fileID: 5808208547970989466, guid: 24f6db8be38abeb43874a9a447900027, type: 3}
+  unitUIPrefab: {fileID: 9152982891785700159, guid: 426f8e85019d9054ab93fb63c4c9e70f, type: 3}
 --- !u!114 &3904446582032283672
 MonoBehaviour:
   m_ObjectHideFlags: 0

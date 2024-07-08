@@ -16,9 +16,10 @@ MonoBehaviour:
   description: What they lack in fire power in comparison is compensated by their
     low cost and higher mobility
   sprite: {fileID: 1772996422, guid: 326c0f373b903274b8bad2e40b8295ae, type: 3}
-  atkDamage: 8
+  atkDamage: 2
   defDamage: 8
-  health: 40
+  health: 2
   speed: 0.5
   range: 2.5
   atkRate: 2
+  cost: 0

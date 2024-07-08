@@ -28,6 +28,8 @@ namespace DefaultNamespace
         public UnitData infantryData;
         public UnitData tankData;
         public UnitData artilleryData;
+
+        public GameObject unitListContent;
         
         
         private void Awake()
@@ -46,19 +48,19 @@ namespace DefaultNamespace
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
-                newUnit.GetComponent<MovableUnit>().InitUnit(infantryData);
+                newUnit.GetComponent<MovableUnit>().InitUnit(infantryData, unitListContent);
             }
             
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
-                newUnit.GetComponent<MovableUnit>().InitUnit(tankData);
+                newUnit.GetComponent<MovableUnit>().InitUnit(tankData, unitListContent);
             }
             
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
-                newUnit.GetComponent<MovableUnit>().InitUnit(artilleryData);
+                newUnit.GetComponent<MovableUnit>().InitUnit(artilleryData, unitListContent);
             }
         }
 

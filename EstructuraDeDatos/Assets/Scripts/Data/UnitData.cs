@@ -8,6 +8,7 @@ namespace Data
         public new string name;
         public string description;
         public Sprite sprite;
+        public Sprite bigSprite;
         public int atkDamage;
         public int defDamage;
         public int health;
