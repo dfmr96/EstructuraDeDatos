@@ -33,12 +33,13 @@ namespace DefaultNamespace
 
         public UnitScroll UnitScrollInfo;
 
+        private UnitScrollList unitScrollList;
         private void Awake()
         {
             //InitUnit();
         }
 
-        public void InitUnit(UnitData unitData, GameObject unitListContent)
+        public void InitUnit(UnitData unitData, GameObject unitListContent, UnitScrollList unitScrollList)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
             spriteRenderer.sprite = unitData.sprite;
@@ -46,7 +47,10 @@ namespace DefaultNamespace
             damage = unitData.atkDamage;
             speed = unitData.speed;
 
+            this.unitScrollList = unitScrollList;
             GenerateUnitListItem(unitData, unitListContent);
+            unitScrollList.UpdateList();
+
         }
 
         private void GenerateUnitListItem(UnitData unitData, GameObject unitListContent)
@@ -213,18 +217,23 @@ namespace DefaultNamespace
                 enemy.TakeDamage(damage);
                 TakeDamage(enemy.damage);
             }
+
+            if (collision.gameObject.TryGetComponent(out EnemyCastle castle))
+            {
+                castle.TakeDamage(damage);
+                DestroyUnit();
+            }
         }
 
         public void TakeDamage(float damage)
         {
             currentHealth -= damage;
             UnitScrollInfo.UpdateHealth( (int)currentHealth);
+            unitScrollList.UpdateList();
 
             if (currentHealth <= 0)
             {
-                Instantiate(explosionPrefab, transform.position, quaternion.identity);
-                Destroy(UnitScrollInfo.gameObject);
-                Destroy(gameObject);
+                DestroyUnit();
             }
         }
         
@@ -251,7 +260,13 @@ namespace DefaultNamespace
         {
             MoveTo(newDestination);
         }
-        
-        
+
+        private void DestroyUnit()
+        {
+            Destroy(UnitScrollInfo.gameObject);
+            unitScrollList.UpdateList();
+            Instantiate(explosionPrefab, transform.position, quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }

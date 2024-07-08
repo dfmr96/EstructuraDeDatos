@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Assets.Scripts.Estructura_de_Datos.Interfaces
+namespace TDAs.QuickSort
 {
     public interface IQuickSort
     {

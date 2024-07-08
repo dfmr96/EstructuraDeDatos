@@ -1,28 +1,27 @@
-using System;
-using System.Collections;
+using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace DefaultNamespace
+public class EnemyCastle : Enemy
 {
-    public class EnemyCastle : Enemy
+    public float currentHealth;
+    public Image healthBar;
+    
+    [SerializeField] private VictoryPanel _victoryPanel;
+    private void Start()
     {
-        public float currentHealth;
+        currentHealth = maxHealth;
+    }
 
-        [SerializeField] private VictoryPanel _victoryPanel;
-        private void Start()
+    public override void TakeDamage(float damageTaken)
+    {
+        currentHealth -= damageTaken;
+        healthBar.fillAmount = currentHealth / maxHealth;
+        if (currentHealth <= 0)
         {
-            currentHealth = health;
-        }
-
-        public override void TakeDamage(float damageTaken)
-        {
-            currentHealth -= damageTaken;
-
-            if (currentHealth <= 0)
-            {
-                Time.timeScale = 0;
-                GameManager.Instance.Victory();
-            }
+            Time.timeScale = 0;
+            Debug.Log("Victory!!!");
+            GameManager.Instance.Victory();
         }
     }
 }

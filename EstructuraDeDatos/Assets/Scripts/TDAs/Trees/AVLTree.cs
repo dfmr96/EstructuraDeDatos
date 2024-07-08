@@ -1,7 +1,8 @@
 ﻿using System;
+using Assets.Scripts.Estructura_de_Datos;
 using Assets.Scripts.Estructura_de_Datos.Interfaces;
 
-namespace Assets.Scripts.Estructura_de_Datos
+namespace TDAs.Trees
 {
     public class AVLTree : IAVLTree
     {

@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Estructura_de_Datos
+﻿using Assets.Scripts.Estructura_de_Datos;
+
+namespace TDAs.Trees
 {
     public class AVLNode
     {

@@ -1,7 +1,7 @@
-﻿namespace Assets.Scripts.Estructura_de_Datos
-{
-    using System;
+﻿using System;
 
+namespace TDAs.Trees
+{
     public class EventNode : IComparable<EventNode>
     {
         public float TriggerTime { get; set; }

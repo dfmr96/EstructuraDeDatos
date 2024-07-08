@@ -5,6 +5,7 @@ using Data;
 using TDAs;
 using TDAs.Graphs;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -30,6 +31,8 @@ namespace DefaultNamespace
         public UnitData artilleryData;
 
         public GameObject unitListContent;
+
+        public UnitScrollList UnitScrollList;
         
         
         private void Awake()
@@ -37,6 +40,8 @@ namespace DefaultNamespace
             if (instance == null)
                 instance = this;
         }
+        
+        
         
         public void UpdateSelectedUnit(MovableUnit unit)
         {
@@ -48,19 +53,19 @@ namespace DefaultNamespace
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {
                 GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
-                newUnit.GetComponent<MovableUnit>().InitUnit(infantryData, unitListContent);
+                newUnit.GetComponent<MovableUnit>().InitUnit(infantryData, unitListContent,UnitScrollList);
             }
             
             if (Input.GetKeyDown(KeyCode.Alpha2))
             {
                 GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
-                newUnit.GetComponent<MovableUnit>().InitUnit(tankData, unitListContent);
+                newUnit.GetComponent<MovableUnit>().InitUnit(tankData, unitListContent,UnitScrollList);
             }
             
             if (Input.GetKeyDown(KeyCode.Alpha3))
             {
                 GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
-                newUnit.GetComponent<MovableUnit>().InitUnit(artilleryData, unitListContent);
+                newUnit.GetComponent<MovableUnit>().InitUnit(artilleryData, unitListContent, UnitScrollList);
             }
         }
 
@@ -73,10 +78,10 @@ namespace DefaultNamespace
             City cityC = CreateCity("City C", cityPositions[2].position);
             City cityD = CreateCity("City D", cityPositions[3].position);
             City cityE = CreateCity("City E", cityPositions[4].position);
-            City cityF = CreateCity("City E", cityPositions[5].position);
-            City cityG = CreateCity("City E", cityPositions[6].position);
-            City cityH = CreateCity("City E", cityPositions[7].position);
-            City cityI = CreateCity("City E", cityPositions[8].position);
+            City cityF = CreateCity("City F", cityPositions[5].position);
+            City cityG = CreateCity("City G", cityPositions[6].position);
+            City cityH = CreateCity("City H", cityPositions[7].position);
+            City cityI = CreateCity("City I", cityPositions[8].position);
             
             cityGraph.AddNode(cityA);
             cityGraph.AddNode(cityB);
@@ -89,7 +94,7 @@ namespace DefaultNamespace
             cityGraph.AddNode(cityI);
             
             
-            AddEdge(cityA, cityB, GetCityDistance(cityA,cityB));
+            AddEdge(cityA, cityB, GetCityDistance(cityA, cityB));
             AddEdge(cityA, cityC, GetCityDistance(cityA,cityC));
             AddEdge(cityA, cityD, GetCityDistance(cityA,cityD));
             AddEdge(cityA, cityE, GetCityDistance(cityA,cityE));

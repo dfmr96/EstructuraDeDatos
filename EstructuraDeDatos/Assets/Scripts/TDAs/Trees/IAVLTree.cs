@@ -1,4 +1,6 @@
-﻿namespace Assets.Scripts.Estructura_de_Datos.Interfaces
+﻿using TDAs.Trees;
+
+namespace Assets.Scripts.Estructura_de_Datos.Interfaces
 {
     public interface IAVLTree
     {

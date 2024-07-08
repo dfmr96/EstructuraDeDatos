@@ -1,6 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using Data;
+using DefaultNamespace;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class CreateUnitButton : MonoBehaviour
@@ -8,6 +8,10 @@ public class CreateUnitButton : MonoBehaviour
     [SerializeField] private GameObject unitPrefab;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private UnitData unitData;
+
+    public GameObject unitListContent;
+
+    public UnitScrollList unitScrollList;
     
     public void Create()
     {
@@ -16,7 +20,9 @@ public class CreateUnitButton : MonoBehaviour
         if (GameManager.Instance.coins > unitData.cost)
         {
             GameManager.Instance.coins -= unitData.cost;
-            Instantiate(unitPrefab, spawnPoint);
+            GameObject newUnit = Instantiate(unitPrefab, spawnPoint.position, quaternion.identity);
+            newUnit.GetComponent<MovableUnit>().InitUnit(unitData, unitListContent, unitScrollList);
+            
         }
     }
 }
