@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: cf353c101eb860140997e3a001e62a9b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 1
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1987b1fb8ed9685489ca9626159cbd52
+      internalID: -917184054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 574
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d669037aef11214f80e564f985c53fd
+      internalID: -844048116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_2
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a07517e2cdfbd7e4bb7ef2193d914aef
+      internalID: 1702374154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_3
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 574
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaf46aac8db714d4682beea3cba6e73e
+      internalID: -998681192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_4
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b36d7902c62c4da438da119c1ca99ac3
+      internalID: 387558821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_5
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 574
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3930b2e0b9957564cb6bac7209bb8398
+      internalID: -462501296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_6
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea32cd0c332639b4fa99d08073575743
+      internalID: 1785938177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 574
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49fdc83d960aa849a5d3b559a2151d1
+      internalID: -362568630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_8
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcac7065e53fe87429359624569b5c48
+      internalID: -1208534710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_9
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 574
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 387bf801247778141906e0e11d5d9090
+      internalID: -704558431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_10
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 536
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80ebb5b7abed6b42bfdd50347abba54
+      internalID: -946880227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_11
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 536
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4e5e75f86ca344a8aebc049a3f52cd
+      internalID: -1988461409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_12
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 536
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c890e77ad390347a354f2cc0d751f8
+      internalID: 350489080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_13
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 536
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea54cf10f722b04985f5e7b989cc682
+      internalID: -1508123380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_14
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 575
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ce269b38a58f14d9fbd7ad42cfbd2c
+      internalID: -1655789357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_15
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 575
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9960ffb87bd425340bc7ef3c84953959
+      internalID: -803003910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_16
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 575
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ffc09292d497b488015701f89061d5
+      internalID: 1687711877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_17
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 575
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6d2bda75c79e74581e399484a89eb2
+      internalID: 591749949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_18
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 473
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c36608e7611e9429873ced715a7612
+      internalID: -1917699976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 473
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a25c93a0c1a1a1d448a8762d59497958
+      internalID: 812986799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_20
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 939a0c4a297b3b543872c303e2a8dc22
+      internalID: 1618909894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_21
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5be26ecaca8e04083bc4b1bab69052
+      internalID: 422050058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_22
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3446607dbd173494f81ab0e508c2e414
+      internalID: 1182277031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_23
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4af50f96cc3d24581ccea7e0c6a12e
+      internalID: -632865502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_24
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 599
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151f0c092e98fdd479bf6a074b1d0797
+      internalID: -812553568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_0: -917184054
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_1: -844048116
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_10: -946880227
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_11: -1988461409
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_12: 350489080
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_13: -1508123380
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_14: -1655789357
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_15: -803003910
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_16: 1687711877
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_17: 591749949
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_18: -1917699976
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_19: 812986799
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_2: 1702374154
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_20: 1618909894
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_21: 422050058
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_22: 1182277031
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_23: -632865502
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_24: -812553568
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_3: -998681192
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_4: 387558821
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_5: -462501296
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_6: 1785938177
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_7: -362568630
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_8: -1208534710
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_9: -704558431
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
