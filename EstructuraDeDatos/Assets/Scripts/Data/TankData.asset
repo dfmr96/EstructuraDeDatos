@@ -19,7 +19,7 @@ MonoBehaviour:
   atkDamage: 8
   defDamage: 8
   health: 40
-  speed: 0.5
+  speed: 2
   range: 2.5
   atkRate: 2
   cost: 10

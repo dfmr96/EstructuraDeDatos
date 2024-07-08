@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using TDAs;
 using TDAs.Graphs;
 using TMPro;
@@ -9,6 +11,10 @@ namespace DefaultNamespace
 {
     public class MovableUnit : MonoBehaviour
     {
+        public UnitData unitData;
+        public int currentHealth;
+        public int damage;
+        
         public float speed = 1f; // Speed of the unit in units per second
         private Coroutine moveCoroutine; // Referencia a la corrutina de movimiento actual
         public bool isSelected = false; // Estado de selección de la unidad
@@ -19,10 +25,27 @@ namespace DefaultNamespace
         public Color selectedColor = Color.red; // Color cuando la unidad está seleccionada
         public Color defaultColor = Color.white;
         private SpriteRenderer spriteRenderer;
-        
-        private void Start()
+
+        private void Awake()
+        {
+            //InitUnit();
+        }
+
+        public void InitUnit(UnitData unitData)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
+            spriteRenderer.sprite = unitData.sprite;
+            currentHealth = unitData.health;
+            damage = unitData.atkDamage;
+            speed = unitData.speed;
+        }
+
+        private void Start()
+        {
+            //SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+            //col = GetComponent<CircleCollider2D>();
+            
+            
             var clickable = GetComponent<ClickableObject>();
             if (clickable != null)
             {
@@ -91,6 +114,15 @@ namespace DefaultNamespace
                     journeyTravelled += speed * Time.deltaTime;
                     float fractionOfJourney = journeyTravelled / journeyLength;
                     transform.position = Vector3.Lerp(startPosition, endPosition, fractionOfJourney);
+
+                    if (startPosition.x < endPosition.x)
+                    {
+                        spriteRenderer.flipX = false;
+                    }
+                    else
+                    {
+                        spriteRenderer.flipX = true;
+                    }
 
                     // Actualiza el texto del tiempo restante
                     float remainingTime = (journeyLength - journeyTravelled) / speed;

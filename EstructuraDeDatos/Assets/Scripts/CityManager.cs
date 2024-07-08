@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Data;
 using TDAs;
 using TDAs.Graphs;
 using TMPro;
@@ -21,6 +23,12 @@ namespace DefaultNamespace
         public LineRenderer fastestPathRenderer;
         public TMP_Text timeRemainingText;
         public MovableUnit selectedUnit; // Unidad seleccionada actualmente
+        public GameObject unitPrefab;
+
+        public UnitData infantryData;
+        public UnitData tankData;
+        public UnitData artilleryData;
+        
         
         private void Awake()
         {
@@ -31,8 +39,29 @@ namespace DefaultNamespace
         public void UpdateSelectedUnit(MovableUnit unit)
         {
             selectedUnit = unit;
-        }        
-        
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
+                newUnit.GetComponent<MovableUnit>().InitUnit(infantryData);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
+                newUnit.GetComponent<MovableUnit>().InitUnit(tankData);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                GameObject newUnit = Instantiate(unitPrefab, cityPositions[0].position, Quaternion.identity);
+                newUnit.GetComponent<MovableUnit>().InitUnit(artilleryData);
+            }
+        }
+
         private void Start()
         {
             cityGraph = new DynamicGraph<City>();
@@ -42,19 +71,48 @@ namespace DefaultNamespace
             City cityC = CreateCity("City C", cityPositions[2].position);
             City cityD = CreateCity("City D", cityPositions[3].position);
             City cityE = CreateCity("City E", cityPositions[4].position);
+            City cityF = CreateCity("City E", cityPositions[5].position);
+            City cityG = CreateCity("City E", cityPositions[6].position);
+            City cityH = CreateCity("City E", cityPositions[7].position);
+            City cityI = CreateCity("City E", cityPositions[8].position);
             
             cityGraph.AddNode(cityA);
             cityGraph.AddNode(cityB);
             cityGraph.AddNode(cityC);
             cityGraph.AddNode(cityD);
             cityGraph.AddNode(cityE);
+            cityGraph.AddNode(cityF);
+            cityGraph.AddNode(cityG);
+            cityGraph.AddNode(cityH);
+            cityGraph.AddNode(cityI);
+            
             
             AddEdge(cityA, cityB, GetCityDistance(cityA,cityB));
             AddEdge(cityA, cityC, GetCityDistance(cityA,cityC));
             AddEdge(cityA, cityD, GetCityDistance(cityA,cityD));
-            AddEdge(cityB, cityE, GetCityDistance(cityB,cityE));
-            AddEdge(cityC, cityE, GetCityDistance(cityC,cityE));
+            AddEdge(cityA, cityE, GetCityDistance(cityA,cityE));
+            AddEdge(cityA, cityF, GetCityDistance(cityA,cityF));
+            
+            
+            AddEdge(cityB, cityD, GetCityDistance(cityB,cityD));
+            AddEdge(cityB, cityG, GetCityDistance(cityB,cityG));
+            
+            AddEdge(cityC, cityF, GetCityDistance(cityC,cityF));
+            AddEdge(cityC, cityH, GetCityDistance(cityC,cityH));
+            
+            AddEdge(cityD, cityG, GetCityDistance(cityD,cityG));
             AddEdge(cityD, cityE, GetCityDistance(cityD,cityE));
+            AddEdge(cityD, cityI, GetCityDistance(cityD,cityI));
+            
+            AddEdge(cityE, cityI, GetCityDistance(cityE,cityI));
+            AddEdge(cityE, cityF, GetCityDistance(cityE,cityF));
+            
+            AddEdge(cityF, cityH, GetCityDistance(cityF,cityH));
+            AddEdge(cityF, cityI, GetCityDistance(cityF,cityI));
+            
+            AddEdge(cityG, cityI, GetCityDistance(cityG,cityI));
+            
+            AddEdge(cityH, cityI, GetCityDistance(cityH,cityI));
             
             //MoveUnitBetweenCities(cityA, cityE);
         }

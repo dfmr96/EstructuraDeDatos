@@ -491,7 +491,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -512,7 +512,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -533,7 +533,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -554,7 +554,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -575,7 +575,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -596,7 +596,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -617,7 +617,7 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -625,6 +625,90 @@ TextureImporter:
       bones: []
       spriteID: 151f0c092e98fdd479bf6a074b1d0797
       internalID: -812553568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_25
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 165
+        width: 24
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f24d43fa2af234b9553a20bc6d067b
+      internalID: -388683049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_26
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 165
+        width: 24
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b57772710f03348a21b511c2478594
+      internalID: 1954060885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_27
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 163
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617f35f46a5d3734a95794ce5b5a40f1
+      internalID: 1191004527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DS DSi - Advance Wars Days of Ruin - Tileset Normal_28
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 114
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd040ebeaf352fa4cad812825d8fae9e
+      internalID: -436605542
       vertices: []
       indices: 
       edges: []
@@ -658,6 +742,10 @@ TextureImporter:
       DS DSi - Advance Wars Days of Ruin - Tileset Normal_22: 1182277031
       DS DSi - Advance Wars Days of Ruin - Tileset Normal_23: -632865502
       DS DSi - Advance Wars Days of Ruin - Tileset Normal_24: -812553568
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_25: -388683049
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_26: 1954060885
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_27: 1191004527
+      DS DSi - Advance Wars Days of Ruin - Tileset Normal_28: -436605542
       DS DSi - Advance Wars Days of Ruin - Tileset Normal_3: -998681192
       DS DSi - Advance Wars Days of Ruin - Tileset Normal_4: 387558821
       DS DSi - Advance Wars Days of Ruin - Tileset Normal_5: -462501296
