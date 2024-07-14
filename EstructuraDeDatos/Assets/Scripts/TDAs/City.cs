@@ -26,21 +26,9 @@ namespace TDAs
         
         private void OnCityClicked()
         {
-            if (CityManager.instance.selectedUnit != null)
+            if (UnitManager.instance.selectedUnit != null)
             {
-                CityManager.instance.MoveUnitBetweenCities(CityManager.instance.selectedUnit, this);
-            }
-            else
-            {
-                Debug.Log("No hay unidad seleccionada para mover.");
-            }
-        }
-
-        private void OnClickCity()
-        {
-            if (CityManager.instance.selectedUnit != null)
-            {
-                CityManager.instance.MoveUnitBetweenCities(CityManager.instance.selectedUnit, this);
+                CityManager.instance.MoveUnitBetweenCities(UnitManager.instance.selectedUnit, this);
             }
             else
             {

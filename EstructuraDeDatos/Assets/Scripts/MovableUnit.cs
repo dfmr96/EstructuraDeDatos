@@ -34,10 +34,6 @@ namespace DefaultNamespace
         public UnitScroll UnitScrollInfo;
 
         private UnitScrollList unitScrollList;
-        private void Awake()
-        {
-            //InitUnit();
-        }
 
         public void InitUnit(UnitData unitData, GameObject unitListContent, UnitScrollList unitScrollList)
         {
@@ -59,22 +55,10 @@ namespace DefaultNamespace
             if (unitUI.TryGetComponent(out UnitScroll unitScroll))
             {
                 UnitScrollInfo = unitScroll;
-                unitScroll.UpdateInfo(unitData.bigSprite, unitData.health, (int)currentHealth, unitData.name);
+                unitScroll.UpdateInfo(unitData.bigSprite, unitData.health, (int)currentHealth, unitData.name, gameObject);
             }
         }
 
-        private void Start()
-        {
-            //SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-            //col = GetComponent<CircleCollider2D>();
-            
-            
-            var clickable = GetComponent<ClickableObject>();
-            if (clickable != null)
-            {
-                clickable.OnLeftClick.AddListener(ToggleSelection);
-            }
-        }
         void OnMouseDown()
         {
             UnitManager.instance.SelectUnit(this);
@@ -89,14 +73,7 @@ namespace DefaultNamespace
         {
             spriteRenderer.color = defaultColor;  // Vuelve al color original
         }
-        
-        private void ToggleSelection()
-        {
-            isSelected = !isSelected;
-            //spriteRenderer.color = isSelected ? selectedColor : defaultColor;
-            Debug.Log($"Unidad {(isSelected ? "seleccionada" : "deseleccionada")}");
-            CityManager.instance.UpdateSelectedUnit(isSelected ? this : null);
-        }
+
         public void MoveUnitAlongPath(List<GraphNode<City>> path)
         {
             StartCoroutine(MoveAlongPath(path));

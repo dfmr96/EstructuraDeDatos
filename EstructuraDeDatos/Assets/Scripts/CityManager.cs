@@ -23,7 +23,6 @@ namespace DefaultNamespace
         public MovableUnit unit;
         public LineRenderer fastestPathRenderer;
         public TMP_Text timeRemainingText;
-        public MovableUnit selectedUnit; // Unidad seleccionada actualmente
         public GameObject unitPrefab;
 
         public UnitData infantryData;
@@ -41,14 +40,6 @@ namespace DefaultNamespace
             if (instance == null)
                 instance = this;
         }
-        
-        
-        
-        public void UpdateSelectedUnit(MovableUnit unit)
-        {
-            selectedUnit = unit;
-        }
-
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -241,76 +232,7 @@ namespace DefaultNamespace
 
             return closestCity;
         }
-        
-        private void DrawFastestPath(List<GraphNode<City>> path)
-        {
-            fastestPathRenderer.positionCount = path.Count;
-            for (int i = 0; i < path.Count; i++)
-            {
-                fastestPathRenderer.SetPosition(i, path[i].value.transform.position);
-            }
-        }
 
-        private IEnumerator MoveUnitAlongPath(List<GraphNode<City>> path)
-        {
-            for (int i = 0; i < path.Count - 1; i++)
-            {
-                City startCity = path[i].value;
-                City endCity = path[i + 1].value;
-                float travelTime = CalculateTravelTimeBetweenCities(startCity, endCity);
-                float elapsedTime = 0;
-
-                // Actualizar el tiempo restante mientras se mueve
-                while (elapsedTime < travelTime)
-                {
-                    float timeRemaining = travelTime - elapsedTime;
-                    timeRemainingText.text = $"Tiempo Restante: {timeRemaining:F1} segundos";
-
-                    // Calcular el porcentaje de avance entre las ciudades
-                    float t = elapsedTime / travelTime;
-
-                    // Interpolar la posición entre la ciudad actual y la siguiente
-                    Vector3 startPosition = startCity.transform.position;
-                    Vector3 endPosition = endCity.transform.position;
-                    unit.transform.position = Vector3.Lerp(startPosition, endPosition, t);
-
-                    elapsedTime += Time.deltaTime;
-
-                    yield return null; // Esperar un frame
-                }
-
-                // Asegurar que la unidad llegue exactamente a la posición final
-                unit.transform.position = endCity.transform.position;
-
-                // Lógica opcional al llegar a cada ciudad
-                Debug.Log($"Llegó a {endCity.cityName}");
-
-                // Opcional: Pausa antes de continuar al siguiente tramo
-                yield return new WaitForSeconds(1f);
-            }
-
-            Debug.Log("Recorrido del camino completo");
-        }
-        
-        private void UpdateTimeRemainingTextPosition(Vector3 unitPosition)
-        {
-            // Ajustar la posición del texto al lado de la unidad
-            Vector3 offset = new Vector3(0, 1, 0); // Ajusta según la posición visual deseada
-            timeRemainingText.transform.position = unitPosition + offset;
-        }
-        
-        
-        
-        /*private float CalculateTotalTravelTime(List<GraphNode<City>> path)
-        {
-            float totalTime = 0;
-            for (int i = 0; i < path.Count; i++)
-            {
-                totalTime += CalculateTravelTimeBetweenCities(path, i);
-            }
-            return totalTime;
-        }*/
-        
         private float CalculateTravelTimeBetweenCities(City fromCity, City toCity)
         {
             float distance = Vector3.Distance(fromCity.transform.position, toCity.transform.position);
@@ -318,26 +240,6 @@ namespace DefaultNamespace
             float travelTime = distance / travelSpeed;
             return travelTime;
         }
-        
-        private City GetCurrentCity(Unit unit)
-        {
-            // Implementar lógica para determinar la ciudad actual de la unidad
-            // Puede ser basado en la posición o alguna lógica específica de tu juego
-            return null; // Debes implementar esta función según la lógica de tu juego
-        }
-        
-        public void ChangeUnitDestination(City newDestination)
-        {
-            if (selectedUnit != null && newDestination != null)
-            {
-                Debug.Log($"Changing destination for {selectedUnit.name} to {newDestination.name}");
-                MoveUnitBetweenCities(selectedUnit, newDestination);
-            }
-            else
-            {
-                Debug.Log("Either no unit is selected or the new destination is null.");
-            }
-        }
-        
+
     }
 }
