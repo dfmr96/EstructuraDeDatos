@@ -97,33 +97,12 @@ namespace DefaultNamespace
             Debug.Log($"Unidad {(isSelected ? "seleccionada" : "deseleccionada")}");
             CityManager.instance.UpdateSelectedUnit(isSelected ? this : null);
         }
-        public void MoveToCity(Vector3 destination)
-        {
-            if (!gameObject.activeInHierarchy)
-            {
-                gameObject.SetActive(true);
-            }
-            StartCoroutine(MoveToDestination(destination));
-        }
-
-        private IEnumerator MoveToDestination(Vector3 destination)
-        {
-            while (Vector3.Distance(transform.position, destination) > 0.1f)
-            {
-                transform.position = Vector3.MoveTowards(transform.position, destination, speed * Time.deltaTime);
-                yield return null;
-            }
-
-            // Optional: Call a method or send a message when the destination is reached
-            OnDestinationReached();
-        }
-        
         public void MoveUnitAlongPath(List<GraphNode<City>> path)
         {
             StartCoroutine(MoveAlongPath(path));
         }
-        
-        public IEnumerator  MoveAlongPath(List<GraphNode<City>> path)
+
+        private IEnumerator  MoveAlongPath(List<GraphNode<City>> path)
         {
             foreach (var node in path)
             {
@@ -153,6 +132,8 @@ namespace DefaultNamespace
 
                     yield return null;
                 }
+                
+                OnDestinationReached();
             }
         }
 
@@ -160,41 +141,6 @@ namespace DefaultNamespace
         {
             // Logic to handle what happens when the unit reaches its destination
             Debug.Log("Destination reached");
-        }
-        
-        public void MoveToCity(City targetCity)
-        {
-            CityManager.instance.MoveUnitBetweenCities(this, targetCity);
-        }
-        
-        private IEnumerator MoveCoroutine(List<GraphNode<City>> path)
-        {
-            for (int i = 0; i < path.Count - 1; i++)
-            {
-                City startCity = path[i].value;
-                City endCity = path[i + 1].value;
-                float travelTime = CalculateTravelTime(startCity, endCity);
-                float elapsedTime = 0;
-
-                while (elapsedTime < travelTime)
-                {
-                    elapsedTime += Time.deltaTime;
-                    float timeRemaining = travelTime - elapsedTime;
-                    UpdateTimeRemainingText(timeRemaining);  // Actualizar el UI con el tiempo restante
-
-                    float t = elapsedTime / travelTime;
-                    transform.position = Vector3.Lerp(startCity.transform.position, endCity.transform.position, t);
-                    yield return null;
-                }
-                transform.position = endCity.transform.position;
-            }
-            Debug.Log("Llegó al destino final.");
-        }
-
-        private float CalculateTravelTime(City startCity, City endCity)
-        {
-            float distance = Vector3.Distance(startCity.transform.position, endCity.transform.position);
-            return distance / speed;
         }
         
         private void UpdateTimeRemainingText(float timeRemaining)
@@ -237,30 +183,6 @@ namespace DefaultNamespace
             }
         }
         
-        public void MoveTo(Vector3 newDestination)
-        {
-            destination = newDestination;
-            if (currentMoveCoroutine != null)
-            {
-                StopCoroutine(currentMoveCoroutine);
-            }
-            currentMoveCoroutine = StartCoroutine(MoveTowardsDestination());
-        }
-        
-        private IEnumerator MoveTowardsDestination()
-        {
-            while (Vector3.Distance(transform.position, destination) > 0.1f)
-            {
-                transform.position = Vector3.Lerp(transform.position, destination, speed * Time.deltaTime);
-                yield return null;
-            }
-        }
-        
-        public void ChangeDestination(Vector3 newDestination)
-        {
-            MoveTo(newDestination);
-        }
-
         private void DestroyUnit()
         {
             Destroy(UnitScrollInfo.gameObject);

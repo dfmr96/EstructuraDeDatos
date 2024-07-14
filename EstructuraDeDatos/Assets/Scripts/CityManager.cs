@@ -34,6 +34,7 @@ namespace DefaultNamespace
 
         public UnitScrollList UnitScrollList;
         
+        public Dictionary<int, List<GraphNode<City>>[]> wavePathDic = new Dictionary<int, List<GraphNode<City>>[]>();
         
         private void Awake()
         {
@@ -71,21 +72,31 @@ namespace DefaultNamespace
 
         private void Start()
         {
+            Time.timeScale = 1;
+            
             cityGraph = new DynamicGraph<City>();
 
             City cityA = CreateCity("City A", cityPositions[0].position);
             City cityB = CreateCity("City B", cityPositions[1].position);
             City cityC = CreateCity("City C", cityPositions[2].position);
-            City cityD = CreateCity("City D", cityPositions[3].position);
-            City cityE = CreateCity("City E", cityPositions[4].position);
-            City cityF = CreateCity("City F", cityPositions[5].position);
-            City cityG = CreateCity("City G", cityPositions[6].position);
-            City cityH = CreateCity("City H", cityPositions[7].position);
-            City cityI = CreateCity("City I", cityPositions[8].position);
+            City enemyPoint1 = CreateCity("EP1", cityPositions[3].position);
+            City enemyPoint2 = CreateCity("EP2", cityPositions[4].position);
+            City enemyPoint3 = CreateCity("EP3", cityPositions[5].position);
+            City enemyPoint4 = CreateCity("EP4", cityPositions[6].position);
+            City cityD = CreateCity("City D", cityPositions[7].position);
+            City cityE = CreateCity("City E", cityPositions[8].position);
+            City cityF = CreateCity("City F", cityPositions[9].position);
+            City cityG = CreateCity("City G", cityPositions[10].position);
+            City cityH = CreateCity("City H", cityPositions[11].position);
+            City cityI = CreateCity("City I", cityPositions[12].position);
             
             cityGraph.AddNode(cityA);
             cityGraph.AddNode(cityB);
             cityGraph.AddNode(cityC);
+            cityGraph.AddNode(enemyPoint1);
+            cityGraph.AddNode(enemyPoint2);
+            cityGraph.AddNode(enemyPoint3);
+            cityGraph.AddNode(enemyPoint4);
             cityGraph.AddNode(cityD);
             cityGraph.AddNode(cityE);
             cityGraph.AddNode(cityF);
@@ -96,15 +107,15 @@ namespace DefaultNamespace
             
             AddEdge(cityA, cityB, GetCityDistance(cityA, cityB));
             AddEdge(cityA, cityC, GetCityDistance(cityA,cityC));
-            AddEdge(cityA, cityD, GetCityDistance(cityA,cityD));
+            AddEdge(cityA, enemyPoint2, GetCityDistance(cityA,enemyPoint2));
             AddEdge(cityA, cityE, GetCityDistance(cityA,cityE));
-            AddEdge(cityA, cityF, GetCityDistance(cityA,cityF));
+            AddEdge(cityA, enemyPoint3, GetCityDistance(cityA,enemyPoint3));
             
             
-            AddEdge(cityB, cityD, GetCityDistance(cityB,cityD));
+            AddEdge(cityB, enemyPoint1, GetCityDistance(cityB,enemyPoint1));
             AddEdge(cityB, cityG, GetCityDistance(cityB,cityG));
             
-            AddEdge(cityC, cityF, GetCityDistance(cityC,cityF));
+            AddEdge(cityC, enemyPoint4, GetCityDistance(cityC,enemyPoint4));
             AddEdge(cityC, cityH, GetCityDistance(cityC,cityH));
             
             AddEdge(cityD, cityG, GetCityDistance(cityD,cityG));
@@ -121,7 +132,37 @@ namespace DefaultNamespace
             
             AddEdge(cityH, cityI, GetCityDistance(cityH,cityI));
             
-            //MoveUnitBetweenCities(cityA, cityE);
+            AddEdge(enemyPoint1,cityD, GetCityDistance(enemyPoint1,cityD));
+            AddEdge(enemyPoint2,cityD, GetCityDistance(enemyPoint2,cityD));
+            AddEdge(enemyPoint3,cityF, GetCityDistance(enemyPoint3,cityF));
+            AddEdge(enemyPoint4,cityF, GetCityDistance(enemyPoint4,cityF));
+            
+            //Guardar caminos de unidades de Wave 1
+            List<GraphNode<City>>[] wave1UnitPaths = new List<GraphNode<City>>[7];
+            wave1UnitPaths[0] = cityGraph.FindShortestPath(cityI, cityB);
+            wave1UnitPaths[1] = cityGraph.FindShortestPath(cityI, enemyPoint1);
+            wave1UnitPaths[2] = cityGraph.FindShortestPath(cityI, enemyPoint2);
+            wave1UnitPaths[3] = cityGraph.FindShortestPath(cityI, cityE);
+            wave1UnitPaths[4] = cityGraph.FindShortestPath(cityI, enemyPoint3);
+            wave1UnitPaths[5] = cityGraph.FindShortestPath(cityI, enemyPoint4);
+            wave1UnitPaths[6] = cityGraph.FindShortestPath(cityI, cityC);
+            wavePathDic.Add(0,wave1UnitPaths);
+            
+            List<GraphNode<City>>[] wave2UnitPaths = new List<GraphNode<City>>[3];
+            wave2UnitPaths[0] = cityGraph.FindShortestPath(cityI, cityA);
+            wave2UnitPaths[1] = cityGraph.FindShortestPath(cityI, cityA);
+            wave2UnitPaths[2] = cityGraph.FindShortestPath(cityI, cityA);
+            wavePathDic.Add(1,wave2UnitPaths);
+            
+            List<GraphNode<City>>[] wave3UnitPaths = new List<GraphNode<City>>[7];
+            wave3UnitPaths[0] = cityGraph.FindShortestPath(cityI, cityB);
+            wave3UnitPaths[1] = cityGraph.FindShortestPath(cityI, cityG);
+            wave3UnitPaths[2] = cityGraph.FindShortestPath(cityI, cityA);
+            wave3UnitPaths[3] = cityGraph.FindShortestPath(cityI, cityE);
+            wave3UnitPaths[4] = cityGraph.FindShortestPath(cityI, cityC);
+            wave3UnitPaths[5] = cityGraph.FindShortestPath(cityI, enemyPoint4);
+            wave3UnitPaths[6] = cityGraph.FindShortestPath(cityI, cityH);
+            wavePathDic.Add(2,wave3UnitPaths);
         }
 
         public int GetCityDistance(City cityA, City cityB)

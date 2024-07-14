@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using Assets.Scripts.Estructura_de_Datos;
+using DefaultNamespace;
+using TDAs.Graphs;
 using UnityEngine;
 
 namespace TDAs.Trees
@@ -17,10 +20,9 @@ namespace TDAs.Trees
         void Start()
         {
             stillRunning = true;
-            AddEvent(20, SpawnEnemiesWave);
-            AddEvent(40, SpawnEnemiesWave);
-            AddEvent(60, SpawnEnemiesWave);
-            AddEvent(80, SpawnEnemiesWave);
+            AddEvent(5, SpawnEnemiesWave);
+            AddEvent(10, SpawnEnemiesWaveWithOffset);
+            AddEvent(15, SpawnEnemiesWave);
             StartCoroutine(EventExecutionRoutine());
         }
 
@@ -51,7 +53,15 @@ namespace TDAs.Trees
 
         void SpawnEnemiesWave()
         {
-            Instantiate(enemiesWaves[enemiesWaveIndex], Vector3.zero, Quaternion.identity);
+            Debug.Log("Wave instantiated");
+            GameObject tempWave = Instantiate(enemiesWaves[enemiesWaveIndex], Vector3.zero, Quaternion.identity);
+            EnemyWave currentWave = tempWave.GetComponent<EnemyWave>();
+            currentWave.SetInitPosition(CityManager.instance.cityPositions[12].position);
+            if (CityManager.instance.wavePathDic.TryGetValue(enemiesWaveIndex, out List<GraphNode<City>>[] paths))
+            {
+                currentWave.SetPaths(paths); 
+                currentWave.MoveAllUnits();
+            }
             enemiesWaveIndex++;
 
             if (enemiesWaveIndex >= enemiesWaves.Length)
@@ -61,5 +71,28 @@ namespace TDAs.Trees
 
             Debug.Log("Se ejecuto el evento SpawnEnemies");
         }
+        
+        void SpawnEnemiesWaveWithOffset()
+        {
+            Debug.Log("Wave instantiated");
+            GameObject tempWave = Instantiate(enemiesWaves[enemiesWaveIndex], Vector3.zero, Quaternion.identity);
+            EnemyWave currentWave = tempWave.GetComponent<EnemyWave>();
+            currentWave.SetInitPosition(CityManager.instance.cityPositions[12].position);
+            if (CityManager.instance.wavePathDic.TryGetValue(enemiesWaveIndex, out List<GraphNode<City>>[] paths))
+            {
+                currentWave.SetPaths(paths); 
+                currentWave.MoveAllUnits(2);
+            }
+            enemiesWaveIndex++;
+
+            if (enemiesWaveIndex >= enemiesWaves.Length)
+            {
+                stillRunning = false;
+            }
+
+            Debug.Log("Se ejecuto el evento SpawnEnemies");
+        }
+        
+        //void SpawnEnemies
     }
 }
